@@ -38,7 +38,7 @@ yarn
 
 -   **Remove a todo**
 
-    #### node src/index.js remove --id="1
+    #### node src/index.js remove --id=1
 
     -   `remove` - Remove command for removing a todo.
     -   `--id` - Which todo we want to remove.

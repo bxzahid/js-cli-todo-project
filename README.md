@@ -30,7 +30,7 @@ yarn
 
 -   **Update a todo**
 
-    #### node src/index.js update --id="1" --text="My updated todo"
+    #### node src/index.js update --id=1 --text="My updated todo"
 
     -   `update` - Update command for updating a todo.
     -   `--id` - Which todo we want to update.
@@ -38,7 +38,7 @@ yarn
 
 -   **Remove a todo**
 
-    #### node src/index.js remove --id="1"
+    #### node src/index.js remove --id="1
 
     -   `remove` - Remove command for removing a todo.
     -   `--id` - Which todo we want to remove.

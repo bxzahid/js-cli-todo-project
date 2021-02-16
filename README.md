@@ -52,12 +52,12 @@ yarn
 
 -   **Done todo**
 
-    #### node src/index.js done"
+    #### node src/index.js done
 
     -   `done` - Done command for removing a todo which was last created.
 
 -   **Show all todo**
 
-    #### node src/index.js list"
+    #### node src/index.js list
 
     -   `list` - List command for showing all todo.

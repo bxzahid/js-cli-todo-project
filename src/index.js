@@ -17,6 +17,7 @@ const { saveFile, readFile } = require("./utils");
 	const { _: baseCommand } = argv;
 
 	switch (baseCommand[0]) {
+		// Create a todo
 		case CREATE: {
 			if (!argv.hasOwnProperty("text")) {
 				console.log(
@@ -31,6 +32,8 @@ const { saveFile, readFile } = require("./utils");
 			saveFile(todo.todoList, filePath);
 			break;
 		}
+
+		// Update a todo
 		case UPDATE: {
 			if (!argv.hasOwnProperty("id") || !argv.hasOwnProperty("text")) {
 				console.log(
@@ -44,6 +47,8 @@ const { saveFile, readFile } = require("./utils");
 			saveFile(todo.todoList, filePath);
 			break;
 		}
+
+		// Remove a todo
 		case REMOVE: {
 			if (!argv.hasOwnProperty("id")) {
 				console.log(
@@ -55,6 +60,8 @@ const { saveFile, readFile } = require("./utils");
 			saveFile(todo.todoList, filePath);
 			break;
 		}
+
+		// Search a todo
 		case SEARCH: {
 			if (!argv.hasOwnProperty("term")) {
 				console.log(
@@ -76,11 +83,15 @@ const { saveFile, readFile } = require("./utils");
 
 			break;
 		}
+
+		// Done todo
 		case DONE: {
 			todo.done();
 			saveFile(todo.todoList, filePath);
 			break;
 		}
+
+		// Show all todo
 		case LIST: {
 			if (todo.todoList.length === 0) {
 				console.log("\n\tThere is no todo...");
@@ -95,6 +106,8 @@ const { saveFile, readFile } = require("./utils");
 
 			break;
 		}
+
+		// If the user give a wrong command, then the default message will print
 		default:
 			console.log("\n\tWrong Command!\n");
 			console.log("\tRight Command List:");

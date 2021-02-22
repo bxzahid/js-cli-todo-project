@@ -1,15 +1,30 @@
+/**
+ * Title: CLI Todo Project
+ * Description: Root
+ * Author: Bx Zahid <zahidhasan.dev@gmail.com> (https://zahidhasan.dev)
+ * Date: 22/02/2021
+ */
+
+// Dependencies
 const path = require("path");
 const { argv } = require("yargs");
 
 const Todo = require("./Todo");
 const { CREATE, UPDATE, REMOVE, SEARCH, DONE, LIST } = require("./command");
-const { saveFile, readFile } = require("./utils");
+const { saveFile, readFile } = require("./lib");
 
-(function init() {
+// Module scaffolding
+const app = {};
+
+app.init = () => {
 	const fileName = "../db.json";
 	const filePath = path.resolve(__dirname, fileName);
 
-	const data = readFile(filePath) || [];
+	let data;
+
+	readFile(filePath, (res) => {
+		data = res || [];
+	});
 
 	// Todo object
 	const todo = new Todo(data);
@@ -29,7 +44,9 @@ const { saveFile, readFile } = require("./utils");
 			todo.create(argv.text.toString());
 
 			console.log("\n\tA new todo added...");
-			saveFile(todo.todoList, filePath);
+			saveFile(todo.todoList, filePath, (err) => {
+				if (err !== null) console.log(err);
+			});
 			break;
 		}
 
@@ -44,7 +61,9 @@ const { saveFile, readFile } = require("./utils");
 
 			todo.update(argv.id, argv.text);
 			console.log("\n\tTodo updated...");
-			saveFile(todo.todoList, filePath);
+			saveFile(todo.todoList, filePath, (err) => {
+				if (err !== null) console.log(err);
+			});
 			break;
 		}
 
@@ -57,7 +76,9 @@ const { saveFile, readFile } = require("./utils");
 				return;
 			}
 			todo.remove(argv.id);
-			saveFile(todo.todoList, filePath);
+			saveFile(todo.todoList, filePath, (err) => {
+				if (err !== null) console.log(err);
+			});
 			break;
 		}
 
@@ -87,7 +108,9 @@ const { saveFile, readFile } = require("./utils");
 		// Done todo
 		case DONE: {
 			todo.done();
-			saveFile(todo.todoList, filePath);
+			saveFile(todo.todoList, filePath, (err) => {
+				if (err !== null) console.log(err);
+			});
 			break;
 		}
 
@@ -113,4 +136,9 @@ const { saveFile, readFile } = require("./utils");
 			console.log("\tRight Command List:");
 			console.log("\tcreate | update | remove | search | done | list");
 	}
-})();
+};
+
+// Initialize app
+app.init();
+
+module.exports = app;

@@ -1,3 +1,10 @@
+/**
+ * Title: Command
+ * Description: All command list
+ * Author: Bx Zahid <zahidhasan.dev@gmail.com> (https://zahidhasan.dev)
+ * Date: 22/02/2021
+ */
+
 const CREATE = "create";
 const UPDATE = "update";
 const REMOVE = "remove";

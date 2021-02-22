@@ -1,4 +1,11 @@
-const { generateID } = require("./utils");
+/**
+ * Title: Todo
+ * Description: Todo template
+ * Author: Bx Zahid <zahidhasan.dev@gmail.com> (https://zahidhasan.dev)
+ * Date: 22/02/2021
+ */
+
+const { generateID } = require("./helpers/utils");
 
 // Making properties from the public to private
 const _todoList = Symbol("todoList");
@@ -42,6 +49,7 @@ class Todo {
 			id: generateID(this.todoList),
 			todo,
 		};
+		
 		this[_todoList].unshift(todoItem);
 	}
 

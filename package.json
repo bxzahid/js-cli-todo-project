@@ -2,24 +2,33 @@
 	"name": "js-cli-todo-project",
 	"version": "1.0.0",
 	"description": "Create, Read, Update, Delete, Search todo in CLI",
-	"main": "index.js",
-	"scripts": {
-		"start": "node src/index.js"
-	},
-	"repository": {
-		"type": "git",
-		"github-url": "https://github.com/bxzahid/js-cli-todo-project.git",
-		"gitlab-url": "https://gitlab.com/bx.zahid/js-cli-todo-project.git"
-	},
 	"keywords": [
 		"todo",
 		"cli-todo",
 		"js-cli-todo",
 		"js-cli-todo-project"
 	],
-	"author": "Bx Zahid <zahidhasan.dev@gmail.com> (https://zahidhasan.dev)",
+	"bugs": "https://github.com/bxzahid/js-cli-todo-project/issues",
 	"license": "ISC",
+	"author": "Bx Zahid <zahidhasan.dev@gmail.com> (https://zahidhasan.dev)",
+	"repository": {
+		"type": "git",
+		"github-url": "https://github.com/bxzahid/js-cli-todo-project.git",
+		"gitlab-url": "https://gitlab.com/bx.zahid/js-cli-todo-project.git"
+	},
+	"main": "index.js",
+	"scripts": {
+		"start": "node src/index.js"
+	},
 	"dependencies": {
 		"yargs": "^16.2.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.20.0",
+		"eslint-config-airbnb-base": "^14.2.1",
+		"eslint-config-prettier": "^8.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-prettier": "^3.3.1",
+		"prettier": "^2.2.1"
 	}
 }
